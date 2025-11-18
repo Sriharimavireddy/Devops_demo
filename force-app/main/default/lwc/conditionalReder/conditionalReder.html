@@ -1,0 +1,18 @@
+<template>
+    <lightning-input type="checkbox" label="developer?" onchange ={divHandler}></lightning-input>
+    <template if:true={displaydiv}>
+    <div>Salesforce Developer</div>
+</template>
+<template if:false={displaydiv}>
+    <div>Salesforce Admin</div>
+</template>
+
+<template for:each={city} for:item="city">
+    <p key={city}>{city}</p>
+</template>
+<h1>newitterator</h1>
+<template iterator:it={city}>
+    <p key={it.value}>{it.value}</p>
+</template>
+    
+</template>

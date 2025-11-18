@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="Salesforce Quiz">
+        <template if:true={isSubmited}>
+            <div class={ScoreHandler}>
+                You have scored {correctAnswers} out of {questionsList.length} </div>
+        </template>
+        <form>
+        <template for:each={questionsList} for:item="quiz">
+            <div key={quiz.id} class="slds-var-m-around_medium"><strong>{quiz.id} .{quiz.Question}</strong>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <input type="radio" name={quiz.id} value="a" onchange={onOptionHandler}/>
+                        {quiz.Answers.a}   
+                    
+                    </div>
+                    <div class="slds-col">
+                        <input type="radio" name={quiz.id} value="b" onchange={onOptionHandler}/>
+                        {quiz.Answers.b}   
+                    
+                    </div>
+                    <div class="slds-col">
+                        <input type="radio" name={quiz.id} value="c" onchange={onOptionHandler}/>
+                        {quiz.Answers.c}                  
+                    </div>
+                    </div>
+                    </div>
+                    
+                    
+                   
+
+        </template>
+        <lightning-button variant="brand" label="Submit" title="Submit" 
+        onclick={onSubmitHandler} disabled={notSelcted} class="slds-m-around_medium"></lightning-button>
+        <lightning-button variant="brand" label="Reset" title="Reset" type="reset" 
+        onclick={onResetHandler} class="slds-m-around_medium"></lightning-button>
+      
+</form>
+</lightning-card>
+    
+</template>

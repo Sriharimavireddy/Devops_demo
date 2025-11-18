@@ -1,0 +1,11 @@
+<template>
+    <lightning-card titile="Setter method child component">
+        <div clas="slds-m-around_medium">
+        <p>What is your job role??</p>
+        <div><slot></slot></div>
+    </div>
+   <footer class="slds-card__footer slds-hide">
+        <slot name="footer" onslotchange={slotChangeHandler}></slot>
+    </footer>
+    </lightning-card>
+</template>

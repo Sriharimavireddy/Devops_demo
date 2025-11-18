@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Wire adapter demo">
+        <div class="slds-m-around_medium">
+            Here is your org ID : {userID}
+            <template if:true={userDetails}>
+                <div>UserName--{userDetails.Name.value}</div>
+            <div> Email--{userDetails.email.value}</div>
+
+            </template>
+            <template if:false={userDetails}>
+               Error--- {Errormessage}
+            </template>
+        </div>
+    </lightning-card>
+    
+</template>

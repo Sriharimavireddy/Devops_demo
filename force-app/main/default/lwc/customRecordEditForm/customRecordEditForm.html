@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Custom Record edit form">
+        <lightning-record-edit-form 
+        object-api-name={objectName}
+        onsubmit={submitHandler}>
+
+        <lightning-input  label="Name"
+        value={inputValue}
+        onkeyup={ChangeHandler}></lightning-input>
+        <lightning-button class="slds-m-around_medium" variant="brand" type="submit" label="Create Account"></lightning-button>
+        
+
+
+        </lightning-record-edit-form>
+    </lightning-card>
+    
+</template>

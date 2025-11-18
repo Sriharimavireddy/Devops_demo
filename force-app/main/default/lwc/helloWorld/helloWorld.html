@@ -1,0 +1,34 @@
+<template>
+<lightning-card title="Conditional Render">
+    <div class="slds-var-m-around_medium">
+        <lightning-button variant="brand" label="Welcome" 
+        title="Welcome" onclick={welcomeMsgHandler} class="slds-m-left_x-small"></lightning-button>
+    </div>
+    <template if:true={isVisible}>
+        <div> Hi {name} Welocome!!  </div>
+    </template>
+
+</lightning-card>    
+<lightning-card title="For loop">
+    <template for:each={ceoList} for:item="cl">
+        <div key={cl.ceoName}>
+            <ul>
+                <li>{cl.ceoName}</li>
+            </ul>
+        </div>
+
+    </template>
+</lightning-card>
+
+<lightning-card title="Iterator loop">
+    <template iterator:ceo={ceoList} >
+        <div key={ceo.value.ceoName}>
+            <ul class="slds-var-m-around_medium">
+                <li>{ceo.value.ceoName}>>>>{ceo.value.companyName}</li>
+            </ul>
+        </div>
+
+    </template>
+</lightning-card>
+    
+</template>

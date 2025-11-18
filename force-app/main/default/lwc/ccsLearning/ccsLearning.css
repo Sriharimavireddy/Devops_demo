@@ -1,0 +1,16 @@
+h1{
+    font-style: italic;
+    border: 2px solid;
+    color: blue;
+}
+p{
+    font-size: 20px;
+    padding: 3px;
+
+}
+
+.name{
+    padding: 5px;
+    margin: 2px;
+    color: blue;
+}

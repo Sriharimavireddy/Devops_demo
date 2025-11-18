@@ -1,0 +1,19 @@
+.container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .score-area{
+        text-align: left;
+        margin-bottom: 12px;
+    }
+    .timer{
+        display: inline-block;
+        margin: 0 1rem;
+    }
+    .reset{
+        float: right;
+        cursor: pointer;
+        margin: 0px 8px;
+    }

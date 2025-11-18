@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Test your Crypto Knowledge" icon-name="standard:entitlement_policy">
+       
+
+        
+        <div class="slds-var-m-around_medium">
+            <template if:true={isSubmitted}>
+                <div class={isScoredFull}>you have scored {correctAnswers} out of {myQuestions.length}</div>
+            </template>
+            <form>
+        <template for:each={myQuestions} for:item="item">
+            <div key={item.id}>
+                <strong>{item.id}--{item.Question}</strong>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                 <input type="radio" name={item.id} value="a" onchange={changeHandler}/>
+                 {item.answers.a}
+                </div>
+                <div class="slds-col">
+                    <input type="radio" name={item.id} value="b"  onchange={changeHandler}/>
+                    {item.answers.b}
+                </div>
+                <div class="slds-col">
+                    <input type="radio" name={item.id} value="c"  onchange={changeHandler}/>
+                    {item.answers.c}
+                </div>
+              </div>
+            </div>
+        </template>
+   
+    <lightning-button variant="brand" type="submit" label="Submit" class="slds-var-m-around_medium" onclick={submitHandler} disabled={allAreNotSelected}></lightning-button>
+    <lightning-button variant="brand" type="Reset" label="Reset" onclick={resetHandler}></lightning-button>
+   
+
+
+</form>
+</div>
+
+    </lightning-card>
+    
+</template>

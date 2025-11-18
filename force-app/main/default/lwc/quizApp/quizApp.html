@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="QUIZ APP" icon-name="standard:entitlement_policy">
+        <form>
+        <div class="slds-var-m-around_medium">
+            <template for:each={myQuestions} for:item="quest">
+                <div key={quest.id} class="slds-var-m-around_medium">
+                    <div><strong>{quest.id}--{quest.Question}</strong></div>
+                    <div class="slds-grid slds-gutters slds-var-m-around_medium" >
+                        <div class="slds-col">
+                            <input type="radio" name={quest.id} value="a" onchnage={changeHandler}/>
+                          {quest.answers.a}
+                        </div>
+                        <div class="slds-col">
+                            <input type="radio" name={quest.id} value="b" onchnage={changeHandler}/>
+                            {quest.answers.b}
+                        </div>
+                        <div class="slds-col">
+                            <input type="radio" name={quest.id} value="c" onchnage={changeHandler}/>
+                            {quest.answers.c}
+                        </div>
+                      </div>
+                    </div>
+            </template>
+        </div>
+        <lightning-button variant="brand" 
+        type="submit" label="Submit" 
+        name="submitbutton" class="slds-var-m-around_small"
+        disabled={allNotSelected} 
+        onclick={submithandler}></lightning-button>
+        <lightning-button variant="brand" type="Reset" label="Reset" name="ResetButton" class="slds-var-m-around_small" onclick={resethandler}></lightning-button>
+    </form>
+    </lightning-card>
+    
+</template>

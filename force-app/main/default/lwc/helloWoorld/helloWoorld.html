@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Two way data binding">
+
+        <div class="slds-var-m-around_medium">Please Enter your name:: 
+            
+        <lightning-input type="text" class="slds-m-around_small" onkeyup={onNameChangeHandler}></lightning-input>
+        <div> Certification name : {name}</div>
+    </div>
+    </lightning-card>
+
+    <lightning-card title="Track property">
+
+        <div class="slds-var-m-around_medium">Please Enter your city name:: 
+            
+        <lightning-input type="text" class="slds-m-around_small" onkeyup={oncityChangeHandler}></lightning-input>
+        <div> City name : {address.city}</div>
+    </div>
+    </lightning-card>
+
+    <lightning-card title="Getter">
+
+        <div class="slds-var-m-around_medium">Please Enter num 1:: 
+            
+        <lightning-input type="text" class="slds-m-around_small"   onchange={onNumber1ChangeHandler}></lightning-input>
+        </div>
+        <div class="slds-var-m-around_medium">Please Enter num 2:: 
+            
+            <lightning-input type="text" class="slds-m-around_small"   onchange={onNumber2ChangeHandler}></lightning-input>
+        <div> Addition of two numbers {num1} and {num2}  is {sumOftwoNums}</div>
+    </div>
+    </lightning-card>
+    
+  
+    
+</template>
